@@ -1,0 +1,36 @@
+html, body {
+    min-height: 100%; 
+    height: 100%; 
+    margin: 0; 
+    padding: 0;
+    background: black;
+}
+
+.center {
+    text-align: center;
+    color: #d4c6c3;
+    font-weight: 100;
+    font-size: 4em;
+    font-family: sans-serif;
+    height: 100px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -50px;
+    line-height: 100px;
+    font-size: 60px;
+    /* background-color: rgba(199, 141, 33, 0.6); */
+    
+    text-shadow:
+        1px 1px black,
+        -1px 1px black,
+        -1px -1px black,
+        1px -1px black;
+}
+
+.timeIndicator {
+    fill: none;
+    stroke: #c78d21;
+    stroke-width: 12px;
+    stroke-linecap: round;
+}
