@@ -70,7 +70,7 @@ function angleToCartesian(radius, center, angle) {
     return {x: retX, y: retY};
 }
 
-alert(StatusBar);
+alert(window.StatusBar);
 
 window.setInterval(function() {
     var center = {
