@@ -17,6 +17,8 @@
     
     <gap:platform name="ios" />
     <gap:platform name="android" />
+    <preference name="fullscreen" value="true" />   
+    <preference name="ios-statusbarstyle" value="black-opaque" />
     
     <gap:plugin name="com.phonegap.plugin.statusbar" />
 
