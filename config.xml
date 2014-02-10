@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.example"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <name>Confusing Clock</name>
+
+    <description>
+        The clock that nobody asked for.
+    </description>
+
+    <author href="http://fh-konzept.de" email="info@fh-konzept.de">
+        fh-konzept GmbH
+    </author>
+
+</widget>
