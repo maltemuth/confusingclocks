@@ -14,5 +14,8 @@
     <author href="http://fh-konzept.de" email="info@fh-konzept.de">
         fh-konzept GmbH
     </author>
+    
+    <gap:platform name="ios" />
+    <gap:platform name="android" />
 
 </widget>
