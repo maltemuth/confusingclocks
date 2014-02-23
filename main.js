@@ -71,7 +71,7 @@ function angleToCartesian(radius, center, angle) {
 }
 
 document.addEventListener("deviceready", function() {
-    StatusBar.hide();
+    StatusBar.overlaysWebView(true);
 }, false);
 
 
