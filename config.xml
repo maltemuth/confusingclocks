@@ -24,6 +24,5 @@
     
     <gap:plugin name="com.phonegap.plugin.statusbar" />
     
-    
 
 </widget>
