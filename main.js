@@ -1,36 +1,39 @@
+/* global window, document, StatusBar */
+
 function currentDecimalSeconds() {
-    t = Date("now");
-    s = new Date().getSeconds();
-    m = new Date().getMinutes();
-    h = new Date().getHours();
+    var // t = Date("now"),
+        s = new Date().getSeconds(),
+        m = new Date().getMinutes(),
+        h = new Date().getHours();
     
-    standardSeconds = s + (60*m) + (3600 * h);
+    var standardSeconds = s + (60*m) + (3600 * h);
     //maximumSeconds = 3600*24;
     
     return Math.round(standardSeconds / 0.864);
 }
 
+// TEST
+
 function currentDecimalHHMMSS() {
-    decimalSeconds = currentDecimalSeconds();
+    var decimalSeconds = currentDecimalSeconds(),
+        displaySeconds = decimalSeconds % 100,
+        displayMinutes = (decimalSeconds - (decimalSeconds % 100)) / 100 % 100,
+        displayHours   = (decimalSeconds - (decimalSeconds % 10000)) / 10000;
 
-    displaySeconds = decimalSeconds % 100;
-    displayMinutes = (decimalSeconds - (decimalSeconds % 100)) / 100 % 100;
-    displayHours = (decimalSeconds - (decimalSeconds % 10000)) / 10000;
-
-    secondString =  ""+ displaySeconds;
-    if(displaySeconds < 10)  secondString = "0" + secondString;
-    minuteString =  ""+ displayMinutes;
-    if(displayMinutes < 10)  minuteString = "0" + minuteString;
+    var secondString =  ""+ displaySeconds;
+    if ( displaySeconds < 10 ) { secondString = "0" + secondString; }
+    var minuteString =  ""+ displayMinutes;
+    if ( displayMinutes < 10 ) { minuteString = "0" + minuteString; }
     
     return displayHours + ":" + minuteString + ":" + secondString;
 }
 
 function currentDecimalTime() {
-    var decimalSeconds = currentDecimalSeconds();
-
-    var displaySeconds = decimalSeconds % 100;
-    var displayMinutes = (decimalSeconds - (decimalSeconds % 100)) / 100 % 100;
-    var displayHours = (decimalSeconds - (decimalSeconds % 10000)) / 10000;   
+    var decimalSeconds = currentDecimalSeconds(),
+        displaySeconds = decimalSeconds % 100,
+        displayMinutes = (decimalSeconds - (decimalSeconds % 100)) / 100 % 100,
+        displayHours = (decimalSeconds - (decimalSeconds % 10000)) / 10000;
+    
     return {h: displayHours, m: displayMinutes, s: displaySeconds};
 }
 
@@ -44,8 +47,6 @@ function circle(elem, center, radius, percentage) {
     var startPoint = angleToCartesian(radius, center, -90);
     var endPoint = angleToCartesian(radius, center, (percentage*3.6)-90);    
     var largeOrSmallValue = (percentage >= 50) ? 1 : 0;
-    
-    var endPointString = " " + endPoint.x + " " + endPoint.y;
     
     var pathString = [
         "M",
@@ -63,9 +64,9 @@ function circle(elem, center, radius, percentage) {
 
 
 function angleToCartesian(radius, center, angle) {
-    var radian = (angle / 180.0 ) * Math.PI;
-    retX = center.x + radius * Math.cos(radian);
-    retY = center.y + radius * Math.sin(radian);
+    var radian = (angle / 180.0 ) * Math.PI,
+        retX = center.x + radius * Math.cos(radian),
+        retY = center.y + radius * Math.sin(radian);
     
     return {x: retX, y: retY};
 }
